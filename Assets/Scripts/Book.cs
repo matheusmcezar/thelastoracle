@@ -3,12 +3,16 @@ using System.Collections;
 
 public class Book : MonoBehaviour
 {
-    [Header("Book")]
-    public Vector2 offScreenPosition = new Vector2(230, 970);
-    public Vector2 onScreenPosition = new Vector2(230, 50);
-    public float slideSpeed = 10f;
+    [Header("Slide")]
+    [SerializeField] private Vector2 offScreenPosition = new Vector2(230, 970);
+    [SerializeField] private Vector2 onScreenPosition = new Vector2(230, 50);
+    [SerializeField] private float slideSpeed = 10f;
     private RectTransform rectTransform;
     private bool isSlinding = false;
+    [Header("Pages")]
+    [SerializeField] private int pageCount = 4;
+    private int currentPage = 1;
+    private BookPage[] pages;
 
     private void Awake()
     {
@@ -16,6 +20,39 @@ public class Book : MonoBehaviour
         {
             rectTransform = this.gameObject.GetComponent<RectTransform>();
             rectTransform.anchoredPosition = offScreenPosition;
+        }
+    }
+
+    public void Start()
+    {
+        pages = this.gameObject.GetComponentsInChildren<BookPage>(true);
+        UpdatePage();
+    }
+
+    public void NextPage()
+    {
+        if (currentPage < pageCount)
+        {
+            currentPage++;
+            UpdatePage();
+        }
+    }
+
+    public void PreviousPage()
+    {
+        if (currentPage > 1)
+        {
+            currentPage--;
+            UpdatePage();
+        }
+    }
+
+    private void UpdatePage()
+    {
+        foreach (BookPage page in pages)
+        {
+            if (page.page == currentPage) page.gameObject.SetActive(true);
+            else page.gameObject.SetActive(false);
         }
     }
 
