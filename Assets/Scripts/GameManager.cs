@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     [Header("NPC")]
     public NPC npc;
 
+    [Header("Baloon Talk")]
+    public BaloonTalk baloonTalk;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        npc.SpawnNPC();
+        //npc.SpawnNPC();
     }
 
     public void HandleBook()
@@ -34,6 +37,16 @@ public class GameManager : MonoBehaviour
         {
             book.Handle();
         }
+    }
+
+    public void StartTalk()
+    {
+        this.baloonTalk.gameObject.SetActive(true);
+    }
+
+    public void FinishTalk()
+    {
+        this.baloonTalk.gameObject.SetActive(false);
     }
 
 }

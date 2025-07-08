@@ -17,9 +17,17 @@ public class NPC : MonoBehaviour
         }
     }
 
+    public void SwitchNPCStatus(){
+        if (this.gameObject.activeInHierarchy) {
+            this.UnpawnNPC();
+        } else {
+            this.SpawnNPC();
+        }
+    }
+
     public void SpawnNPC()
     {
-        if (this.gameObject != null)
+        if (this.gameObject != null && !this.gameObject.activeInHierarchy)
         {
             this.gameObject.SetActive(true);
             StartCoroutine(Slide(offScreenPosition, onScreenPosition));
@@ -28,10 +36,10 @@ public class NPC : MonoBehaviour
 
     public void UnpawnNPC()
     {
-        if (this.gameObject != null)
+        if (this.gameObject != null && this.gameObject.activeInHierarchy)
         {
             this.gameObject.SetActive(true);
-            StartCoroutine(Slide(onScreenPosition, offScreenPosition, true));
+            StartCoroutine(Slide(onScreenPosition, offScreenPosition, false));
         }
     }
 
@@ -51,16 +59,12 @@ public class NPC : MonoBehaviour
 
         if (slidingIn)
         {
-            StartCoroutine(Talk());
+            GameManager.Instance.StartTalk();
         }
         else
         {
+            GameManager.Instance.FinishTalk();
             this.gameObject.SetActive(false);
         }
-    }
-
-    private IEnumerator Talk()
-    {
-        yield return null;
     }
 }
