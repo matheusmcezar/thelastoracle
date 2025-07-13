@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioManager : MonoBehaviour
@@ -7,7 +8,9 @@ public class AudioManager : MonoBehaviour
     private static AudioManager Instance;
     [SerializeField] private AudioEntry[] audioEntries;
     private Dictionary<AudioType, AudioClip> audioMap;
-    private AudioSource audioSource;
+    [SerializeField]private AudioSource musicSource;
+    [SerializeField]private AudioSource SFXSource;
+
     
     [SerializeField] AudioClip backgroundMusic;
 
@@ -22,7 +25,7 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        audioSource = GetComponent<AudioSource>();
+        musicSource = GetComponent<AudioSource>();
         audioMap = new Dictionary<AudioType, AudioClip>();
 
         foreach (var entry in audioEntries)
@@ -36,12 +39,28 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance.audioMap.TryGetValue(type, out var audioClip))
         {
-            Instance.audioSource.PlayOneShot(audioClip, volume);
+            Instance.SFXSource.PlayOneShot(audioClip, volume);
         }
     }
+
+    public static void PlayDialogSFX()
+    {
+        if (Instance.audioMap.TryGetValue(AudioType.NPC_VOICE, out var audioClip))
+        {
+            Instance.SFXSource.loop = true;
+            Instance.SFXSource.clip = audioClip;
+            Instance.SFXSource.Play();
+        }
+    }
+
+    public static void StopDialogSFX()
+    {
+        Instance.SFXSource.loop = false;
+    }
+
     void Start()
     {
-        audioSource.clip = backgroundMusic;
-        audioSource.Play();
+        musicSource.clip = backgroundMusic;
+        musicSource.Play();
     }
 }

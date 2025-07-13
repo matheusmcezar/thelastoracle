@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 
     [Header("Baloon Talk")]
     public BaloonTalk baloonTalk;
+    
+    [Header("IA Screen Talk")]
+    public IAScreenTalk iaScreenTalk;
 
     private void Awake()
     {
@@ -39,14 +42,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void StartTalk()
+    public void StartTalk(int NPCId)
     {
+        this.baloonTalk.NPCId = NPCId;
         this.baloonTalk.gameObject.SetActive(true);
     }
 
     public void FinishTalk()
     {
         this.baloonTalk.gameObject.SetActive(false);
+    }
+
+    public void StartIATalk(int NPCId)
+    {
+        this.iaScreenTalk.NPCId = NPCId;
+        this.iaScreenTalk.StartTalk();
     }
 
 }

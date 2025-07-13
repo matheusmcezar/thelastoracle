@@ -1,9 +1,14 @@
-using UnityEngine;
 using System.Collections;
+using System.Threading.Tasks;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+
 
 public class BaloonTalk : MonoBehaviour
 {
+    #region ATRIBUTES
     [Header("Children")]
     [SerializeField] private RectTransform imageRect;
     [SerializeField] private TextMeshProUGUI textTMP;
@@ -11,9 +16,13 @@ public class BaloonTalk : MonoBehaviour
     [SerializeField] private float animationDuration = 0.1f;
     [SerializeField] private float textSpeed = 0.05f;
     private float originalHeight;
+    private LocalizedString localizedString;
     private string[] textLines;
     private int currentLine;
+    public int NPCId;
+    #endregion
 
+    #region DEFAULT METHODS
     private void Awake()
     {
         originalHeight = imageRect.sizeDelta.y;
@@ -24,7 +33,9 @@ public class BaloonTalk : MonoBehaviour
     {
         StartCoroutine(RevealCoroutine());
     }
+    #endregion
 
+    #region SHOW/HIDE
     public void Hide()
     {
         StopAllCoroutines();
@@ -62,16 +73,17 @@ public class BaloonTalk : MonoBehaviour
             yield return null;
         }
         this.gameObject.SetActive(false);
+        GameManager.Instance.StartIATalk(NPCId);
     }
+    #endregion
 
-    // TODO: transformar e sessão de código
-    // TEXT METHODS
-    private void StartTalk()
+    #region TEXT METHODS
+    private async void StartTalk()
     {
         this.textTMP.text = string.Empty;
-        this.textLines = this.GetTextLines();
+        this.textLines = await this.GetTextLines();
         this.currentLine = 0;
-        //AudioManager.PlayDialogSFX(audioManager.dialogWrite);
+        AudioManager.PlayDialogSFX();
         StartCoroutine(PrintLine());
     }
 
@@ -81,7 +93,40 @@ public class BaloonTalk : MonoBehaviour
             textTMP.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
-        //AudioManager.StopDialogSFX();
+        AudioManager.StopDialogSFX();
+    }
+
+    private void FinishLine()
+    {
+        StopAllCoroutines();
+        textTMP.text = textLines[currentLine];
+        AudioManager.StopDialogSFX();
+    }
+
+    private void NextLine()
+    {
+        if (currentLine < textLines.Length - 1) {
+            currentLine++;
+            textTMP.text = string.Empty;
+            AudioManager.PlayDialogSFX();
+            StartCoroutine(PrintLine());
+        } else {
+            AudioManager.StopDialogSFX();
+            this.Hide();
+        }
+    }
+
+    private async Task<string[]> GetTextLines()
+    {
+        var localized = new LocalizedString
+        {
+            TableReference = "Languages",
+            TableEntryReference = "npc-" + this.NPCId + "-text"
+        };
+
+        string text = await localized.GetLocalizedStringAsync().Task;
+
+        return text.Split("\n");
     }
 
     public void HandleClick()
@@ -95,29 +140,5 @@ public class BaloonTalk : MonoBehaviour
             FinishLine();
         }
     }
-
-    private void FinishLine()
-    {
-        StopAllCoroutines();
-        textTMP.text = textLines[currentLine];
-        //AudioManager.StopDialogSFX();
-    }
-
-    private void NextLine()
-    {
-        if (currentLine < textLines.Length - 1) {
-            currentLine++;
-            textTMP.text = string.Empty;
-            //AudioManager.PlayDialogSFX(audioManager.dialogWrite);
-            StartCoroutine(PrintLine());
-        } else {
-            //AudioManager.StopDialogSFX();
-            this.Hide();
-        }
-    }
-
-    private string[] GetTextLines()
-    {
-        return new string[] {"Oi", "Isso e uma string de teste.", "As quebras de linha são linhas diferentes"};
-    }
+    #endregion
 }

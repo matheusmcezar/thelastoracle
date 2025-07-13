@@ -1,5 +1,8 @@
 using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using System;
+using UnityEngine.Rendering.Universal;
 
 public class NPC : MonoBehaviour
 {
@@ -7,13 +10,19 @@ public class NPC : MonoBehaviour
     [SerializeField] private Vector3 offScreenPosition = new Vector3(12, -0.2f, 1);
     [SerializeField] private Vector3 onScreenPosition = new Vector3(7, -0.2f, 1);
     [SerializeField] private float slideDuration = 0.2f;
+    [SerializeField] private int NPCId;
     private Transform transform;
+    private SpriteRenderer spriteRenderer;
+    private Sprite NPCSprite;
+    private Light2D light;
 
     private void Awake()
     {
         if (this.gameObject != null)
         {
-            transform = this.gameObject.GetComponent<Transform>();
+            this.transform = this.gameObject.GetComponent<Transform>();
+            this.spriteRenderer = this.GetComponent<SpriteRenderer>();
+            this.light = this.GetComponent<Light2D>();
         }
     }
 
@@ -27,10 +36,21 @@ public class NPC : MonoBehaviour
 
     public void SpawnNPC()
     {
-        if (this.gameObject != null && !this.gameObject.activeInHierarchy)
+        if (this.gameObject != null && !this.gameObject.activeInHierarchy && NPCId != 0)
         {
-            this.gameObject.SetActive(true);
-            StartCoroutine(Slide(offScreenPosition, onScreenPosition));
+            try
+            {
+                this.gameObject.SetActive(true);
+                NPCSprite = Resources.Load<Sprite>("Sprites/NPCs/npc-" + NPCId);
+                this.spriteRenderer.sprite = NPCSprite;
+                this.light.lightCookieSprite = NPCSprite;
+                StartCoroutine(Slide(offScreenPosition, onScreenPosition));
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e);
+            }
+            
         }
     }
 
@@ -59,7 +79,7 @@ public class NPC : MonoBehaviour
 
         if (slidingIn)
         {
-            GameManager.Instance.StartTalk();
+            GameManager.Instance.StartTalk(this.NPCId);
         }
         else
         {
