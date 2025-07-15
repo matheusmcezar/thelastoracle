@@ -23,11 +23,99 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4696518541312
-    m_Localized: "Sim\nN\xE3o"
+    m_Localized: Sim
     m_Metadata:
       m_Items: []
   - m_Id: 4816714711040
     m_Localized: "\xC9, funciona!\nVoc\xEA vai mat\xE1-lo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784640
+    m_Localized: Estou pensando nisso
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322560
+    m_Localized: Vou nada
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754689
+    m_Localized: "Oi\nVoc\xEA precisa de ajuda?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711041
+    m_Localized: "Posso ajudar.\nVoc\xEA confia em mim?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541313
+    m_Localized: Claro
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784641
+    m_Localized: Talvez
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322561
+    m_Localized: "Na verdade, n\xE3o"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754690
+    m_Localized: "Ol\xE1, viajante\nBem-vindo ao nosso acampamento."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711042
+    m_Localized: "Voc\xEA vem em paz?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541314
+    m_Localized: Sim, venho
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784642
+    m_Localized: "N\xE3o tenho certeza"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322562
+    m_Localized: "N\xE3o, quero guerra"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754691
+    m_Localized: "Voc\xEA parece cansado\nQuer um lugar pra descansar?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711043
+    m_Localized: "Aqui \xE9 seguro\nPor enquanto."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541315
+    m_Localized: Obrigado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784643
+    m_Localized: Talvez depois
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322563
+    m_Localized: "N\xE3o confio em voc\xEA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754692
+    m_Localized: "Essa floresta est\xE1 amaldi\xE7oada\nVoc\xEA sentiu isso?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711044
+    m_Localized: "Alguns nunca voltam\nVoc\xEA tem medo?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541316
+    m_Localized: "N\xE3o, sou corajoso"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784644
+    m_Localized: Um pouco
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322564
+    m_Localized: Apavorado
     m_Metadata:
       m_Items: []
   references:

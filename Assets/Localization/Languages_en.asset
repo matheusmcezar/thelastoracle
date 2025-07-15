@@ -27,15 +27,115 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4696518541312
-    m_Localized: 'Yes
-
-      No'
+    m_Localized: Yes
     m_Metadata:
       m_Items: []
   - m_Id: 4816714711040
     m_Localized: 'Yes, it works!
 
       Will you kill him?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784640
+    m_Localized: Thinkg about
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322560
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754689
+    m_Localized: 'Hey there
+
+      Do you need help?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711041
+    m_Localized: 'I can assist.
+
+      Do you trust me?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541313
+    m_Localized: Of course
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784641
+    m_Localized: Maybe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322561
+    m_Localized: Not really
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754690
+    m_Localized: 'Hello, traveler
+
+      Welcome to our camp.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711042
+    m_Localized: Do you come in peace?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541314
+    m_Localized: Yes, I do
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784642
+    m_Localized: I'm not sure
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322562
+    m_Localized: No, I want war
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754691
+    m_Localized: 'You look tired
+
+      Need a place to rest?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711043
+    m_Localized: 'It''s safe here
+
+      For now.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541315
+    m_Localized: Thank you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784643
+    m_Localized: Maybe later
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322563
+    m_Localized: I don't trust you
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754692
+    m_Localized: 'This forest is cursed
+
+      Did you feel it?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711044
+    m_Localized: 'Some never return
+
+      Are you afraid?'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541316
+    m_Localized: No, I'm brave
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784644
+    m_Localized: A little
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322564
+    m_Localized: Terrified
     m_Metadata:
       m_Items: []
   references:

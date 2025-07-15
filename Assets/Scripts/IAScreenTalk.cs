@@ -54,7 +54,7 @@ public class IAScreenTalk : MonoBehaviour
         }
         else
         {
-            // TODO
+            GameManager.Instance.ShowOptionButtons(NPCId);
         }
     }
 

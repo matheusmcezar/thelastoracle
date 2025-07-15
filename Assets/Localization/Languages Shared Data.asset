@@ -24,7 +24,95 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 4696518541312
-    m_Key: npc-1-options
+    m_Key: npc-1-option-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784640
+    m_Key: npc-1-option-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322560
+    m_Key: npc-1-option-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754689
+    m_Key: npc-2-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711041
+    m_Key: npc-2-ia-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541313
+    m_Key: npc-2-option-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784641
+    m_Key: npc-2-option-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322561
+    m_Key: npc-2-option-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754690
+    m_Key: npc-3-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711042
+    m_Key: npc-3-ia-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541314
+    m_Key: npc-3-option-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784642
+    m_Key: npc-3-option-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322562
+    m_Key: npc-3-option-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754691
+    m_Key: npc-4-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711043
+    m_Key: npc-4-ia-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541315
+    m_Key: npc-4-option-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784643
+    m_Key: npc-4-option-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322563
+    m_Key: npc-4-option-3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 97648754692
+    m_Key: npc-5-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4816714711044
+    m_Key: npc-5-ia-text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4696518541316
+    m_Key: npc-5-option-1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659341628784644
+    m_Key: npc-5-option-2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 659406032322564
+    m_Key: npc-5-option-3
     m_Metadata:
       m_Items: []
   m_Metadata:

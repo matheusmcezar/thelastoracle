@@ -285,8 +285,9 @@ GameObject:
   - component: {fileID: 119848631}
   - component: {fileID: 119848630}
   - component: {fileID: 119848629}
+  - component: {fileID: 119848635}
   m_Layer: 5
-  m_Name: ButtonNo
+  m_Name: OptionButton_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -410,21 +411,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 551754623}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: SwitchNPCStatus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 547790890}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: 
+        m_MethodName: SpawnNextNPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -472,6 +461,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 119848627}
   m_CullTransparentMesh: 1
+--- !u!114 &119848635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119848627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da9703feba79c54282ddd66716778ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionText: {fileID: 1762212110}
 --- !u!1 &138770241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2036,6 +2038,12 @@ MonoBehaviour:
   npc: {fileID: 551754623}
   baloonTalk: {fileID: 599185459}
   iaScreenTalk: {fileID: 1126686033}
+  scroll: {fileID: 1695072903}
+  npcDataSet:
+    npcs: []
+  kindness: 0
+  faith: 0
+  hope: 0
 --- !u!1 &551754619
 GameObject:
   m_ObjectHideFlags: 0
@@ -2065,8 +2073,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 12, y: -0.2, z: 0}
-  m_LocalScale: {x: 0.2455556, y: 0.2455556, z: 0.2455556}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 971376110}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2119,7 +2127,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 8.13, y: 18.98}
+  m_Size: {x: 6.41, y: 14.99}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -2161,8 +2169,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0, y: 9.49, z: 0}
-    m_Extent: {x: 4.065, y: 9.49, z: 0}
+    m_Center: {x: 0, y: 7.495, z: 0}
+    m_Extent: {x: 3.205, y: 7.495, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -2192,7 +2200,20 @@ MonoBehaviour:
   offScreenPosition: {x: 12, y: -0.2, z: 1}
   onScreenPosition: {x: 7, y: -0.2, z: 1}
   slideDuration: 0.2
-  NPCId: 1
+  npcData:
+    NPCId: 0
+    option_1:
+      kindness: 0
+      faith: 0
+      hope: 0
+    option_2:
+      kindness: 0
+      faith: 0
+      hope: 0
+    option_3:
+      kindness: 0
+      faith: 0
+      hope: 0
 --- !u!1 &571783366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2345,8 +2366,9 @@ GameObject:
   - component: {fileID: 585607467}
   - component: {fileID: 585607466}
   - component: {fileID: 585607465}
+  - component: {fileID: 585607471}
   m_Layer: 5
-  m_Name: ButtonMaybe
+  m_Name: OptionButton_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2520,6 +2542,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585607463}
   m_CullTransparentMesh: 1
+--- !u!114 &585607471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585607463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da9703feba79c54282ddd66716778ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionText: {fileID: 1617349525}
 --- !u!1 &599185455
 GameObject:
   m_ObjectHideFlags: 0
@@ -5651,7 +5686,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nao sei
+  m_text: .
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a47ed4afeccdf3342a9583bb0c58dbb5, type: 2}
   m_sharedMaterial: {fileID: 8501412414527899546, guid: a47ed4afeccdf3342a9583bb0c58dbb5, type: 2}
@@ -5678,8 +5713,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -5716,7 +5751,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 493.44623, y: 77.912674, z: 415.5337, w: 90.898026}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5787,7 +5822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sim
+  m_text: .
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a47ed4afeccdf3342a9583bb0c58dbb5, type: 2}
   m_sharedMaterial: {fileID: 8501412414527899546, guid: a47ed4afeccdf3342a9583bb0c58dbb5, type: 2}
@@ -5814,8 +5849,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -5852,7 +5887,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 493.44623, y: 77.912674, z: 415.5337, w: 90.898026}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -5877,6 +5912,7 @@ GameObject:
   - component: {fileID: 1695072900}
   - component: {fileID: 1695072902}
   - component: {fileID: 1695072901}
+  - component: {fileID: 1695072903}
   m_Layer: 5
   m_Name: Scroll
   m_TagString: Untagged
@@ -5946,6 +5982,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1695072899}
   m_CullTransparentMesh: 1
+--- !u!114 &1695072903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695072899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9e56371b3c49e41a17c6d4f979771c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  option1: {fileID: 1853118071}
+  option2: {fileID: 585607471}
+  option3: {fileID: 119848635}
+  NPCId: 0
 --- !u!1 &1762212108
 GameObject:
   m_ObjectHideFlags: 0
@@ -6003,7 +6055,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Nao
+  m_text: .
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a47ed4afeccdf3342a9583bb0c58dbb5, type: 2}
   m_sharedMaterial: {fileID: 8501412414527899546, guid: a47ed4afeccdf3342a9583bb0c58dbb5, type: 2}
@@ -6030,8 +6082,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -6068,7 +6120,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 493.44623, y: 77.912674, z: 415.5337, w: 90.898026}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6412,8 +6464,9 @@ GameObject:
   - component: {fileID: 1853118068}
   - component: {fileID: 1853118069}
   - component: {fileID: 1853118070}
+  - component: {fileID: 1853118071}
   m_Layer: 5
-  m_Name: ButtonYes
+  m_Name: OptionButton_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6599,6 +6652,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca4f31b62e0a0d0418ac4c29752f00e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1853118071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853118063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da9703feba79c54282ddd66716778ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionText: {fileID: 1667355991}
 --- !u!1 &1894933053
 GameObject:
   m_ObjectHideFlags: 0

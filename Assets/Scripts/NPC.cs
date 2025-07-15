@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private Vector3 offScreenPosition = new Vector3(12, -0.2f, 1);
     [SerializeField] private Vector3 onScreenPosition = new Vector3(7, -0.2f, 1);
     [SerializeField] private float slideDuration = 0.2f;
-    [SerializeField] private int NPCId;
+    public NPCData npcData;
     private Transform transform;
     private SpriteRenderer spriteRenderer;
     private Sprite NPCSprite;
@@ -36,12 +36,12 @@ public class NPC : MonoBehaviour
 
     public void SpawnNPC()
     {
-        if (this.gameObject != null && !this.gameObject.activeInHierarchy && NPCId != 0)
+        if (this.gameObject != null && !this.gameObject.activeInHierarchy && npcData.NPCId != 0)
         {
             try
             {
                 this.gameObject.SetActive(true);
-                NPCSprite = Resources.Load<Sprite>("Sprites/NPCs/npc-" + NPCId);
+                NPCSprite = Resources.Load<Sprite>("Sprites/NPCs/npc-" + npcData.NPCId);
                 this.spriteRenderer.sprite = NPCSprite;
                 this.light.lightCookieSprite = NPCSprite;
                 StartCoroutine(Slide(offScreenPosition, onScreenPosition));
@@ -79,7 +79,7 @@ public class NPC : MonoBehaviour
 
         if (slidingIn)
         {
-            GameManager.Instance.StartTalk(this.NPCId);
+            GameManager.Instance.StartTalk(this.npcData.NPCId);
         }
         else
         {

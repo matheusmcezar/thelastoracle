@@ -1,0 +1,94 @@
+{
+    "npcs": [
+        {
+            "NPCId": 1,
+            "option_1": {
+                "kindness": 7,
+                "faith": -3,
+                "hope": 1
+            },
+            "option_2": {
+                "kindness": -6,
+                "faith": 9,
+                "hope": -4
+            },
+            "option_3": {
+                "kindness": 0,
+                "faith": -10,
+                "hope": 8
+            }
+        },
+        {
+            "NPCId": 2,
+            "option_1": {
+                "kindness": -2,
+                "faith": 5,
+                "hope": 7
+            },
+            "option_2": {
+                "kindness": 3,
+                "faith": -7,
+                "hope": 0
+            },
+            "option_3": {
+                "kindness": 10,
+                "faith": -1,
+                "hope": -9
+            }
+        },
+        {
+            "NPCId": 3,
+            "option_1": {
+                "kindness": -8,
+                "faith": 2,
+                "hope": 6
+            },
+            "option_2": {
+                "kindness": 4,
+                "faith": -5,
+                "hope": -3
+            },
+            "option_3": {
+                "kindness": -1,
+                "faith": 10,
+                "hope": 2
+            }
+        },
+        {
+            "NPCId": 4,
+            "option_1": {
+                "kindness": 5,
+                "faith": -9,
+                "hope": 4
+            },
+            "option_2": {
+                "kindness": -7,
+                "faith": 3,
+                "hope": -2
+            },
+            "option_3": {
+                "kindness": 9,
+                "faith": -4,
+                "hope": 0
+            }
+        },
+        {
+            "NPCId": 5,
+            "option_1": {
+                "kindness": 6,
+                "faith": 0,
+                "hope": -10
+            },
+            "option_2": {
+                "kindness": -3,
+                "faith": 7,
+                "hope": 5
+            },
+            "option_3": {
+                "kindness": 1,
+                "faith": -6,
+                "hope": 9
+            }
+        }
+    ]
+}
